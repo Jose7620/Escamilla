@@ -1,0 +1,10 @@
+from bs4 import BeautifulSoup
+import requests
+
+website = 'https://www.walmart.com.mx/browse/computadoras/destacados-computadoras/destacados-computadoras/264880_300181_300182'
+results = requests.get(website)
+content = results.text
+
+soup = BeautifulSoup(content, 'lxml')
+print(soup.prettify()) 
+
